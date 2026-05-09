@@ -4,906 +4,166 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>ஜாதகம் · Jothishwaran</title>
-<meta name="description" content="Vedic birth horoscope of Jothishwaran (ஜோதிஸ்வரன்) — Born 19 March 2000, 2:57 AM, Tiruvannamalai.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============== TOKENS ============== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  /* Cosmic palette — midnight + nebula */
-  --night-100:    #050614;
-  --night-90:     #080a1f;
-  --night-80:     #0d1130;
-  --night-70:     #131840;
-  --night-60:     #1a2050;
-
-  --star-pure:    #ffffff;
-  --star-warm:    #fff8e1;
-  --star-blue:    #c5d8ff;
-  --star-violet:  #e0c5ff;
-
-  --aurora-1:     #4a3aff;
-  --aurora-2:     #8b5cf6;
-  --aurora-3:     #ec4899;
-  --aurora-4:     #f59e0b;
-
-  --gold:         #fbbf24;
-  --gold-soft:    #fde68a;
-  --copper:       #d97706;
-  --rose:         #f472b6;
-  --cyan:         #67e8f9;
-
-  --ink-100:      #f5f3ff;
-  --ink-80:       #cdc8e6;
-  --ink-60:       #8b86a8;
-  --ink-40:       #5a5577;
-  --ink-30:       #3d3a55;
-
-  --display: "Italiana", "Didot", serif;
-  --serif:   "Cormorant Garamond", Georgia, serif;
-  --sans:    "Inter", -apple-system, system-ui, sans-serif;
-  --tamil:   "Noto Sans Tamil", serif;
-
-  --ease:    cubic-bezier(0.22, 0.61, 0.36, 1);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-
-  --gutter: clamp(1.25rem, 4vw, 3rem);
-  --max:    1100px;
-}
-
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
-body {
-  background: var(--night-100);
-  color: var(--ink-80);
-  font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-html[data-lang="ta"] body :where(p, li, span, a, h1, h2, h3, h4, dt, dd, label, button) {
-  font-family: var(--tamil);
-}
-
-/* ============== COSMIC BACKGROUND LAYERS ============== */
-.cosmos {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* Nebula gradient layers */
-.nebula-1 {
-  position: absolute;
-  width: 1200px; height: 1200px;
-  top: -300px; right: -300px;
-  background: radial-gradient(circle,
-    rgba(139, 92, 246, 0.18) 0%,
-    rgba(74, 58, 255, 0.08) 30%,
-    transparent 60%);
-  filter: blur(60px);
-  animation: nebulaDrift1 40s ease-in-out infinite;
-}
-.nebula-2 {
-  position: absolute;
-  width: 1000px; height: 1000px;
-  bottom: -200px; left: -200px;
-  background: radial-gradient(circle,
-    rgba(236, 72, 153, 0.12) 0%,
-    rgba(245, 158, 11, 0.06) 35%,
-    transparent 65%);
-  filter: blur(80px);
-  animation: nebulaDrift2 50s ease-in-out infinite;
-}
-.nebula-3 {
-  position: absolute;
-  width: 800px; height: 800px;
-  top: 40%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle,
-    rgba(103, 232, 249, 0.05) 0%,
-    transparent 60%);
-  filter: blur(70px);
-  animation: nebulaDrift3 35s ease-in-out infinite;
-}
-@keyframes nebulaDrift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-80px, 60px) scale(1.1); }
-}
-@keyframes nebulaDrift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(100px, -50px) scale(1.15); }
-}
-@keyframes nebulaDrift3 {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50%      { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-/* Star field — built via box-shadow chains for performance */
-.stars-far, .stars-mid, .stars-near {
-  position: absolute;
-  width: 1px; height: 1px;
-  background: transparent;
-}
-.stars-far { animation: starsDrift 200s linear infinite; }
-.stars-mid { animation: starsDrift 120s linear infinite; }
-.stars-near { animation: starsDrift 80s linear infinite; }
-@keyframes starsDrift {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-2000px); }
-}
-
-/* Twinkle layer */
-.twinkle {
-  position: absolute;
-  inset: 0;
-}
-.twinkle::before, .twinkle::after {
-  content: "";
-  position: absolute;
-  width: 2px; height: 2px;
-  border-radius: 50%;
-  background: var(--star-pure);
-  box-shadow:
-    100px 200px var(--star-warm), 300px 400px var(--star-blue),
-    500px 100px var(--star-pure), 700px 300px var(--star-warm),
-    200px 600px var(--star-blue), 800px 500px var(--star-pure),
-    400px 700px var(--star-warm), 900px 200px var(--star-blue),
-    150px 800px var(--star-pure), 600px 900px var(--star-warm),
-    1100px 300px var(--star-pure), 1200px 600px var(--star-blue),
-    50px 1100px var(--star-warm), 1300px 100px var(--star-pure),
-    250px 1200px var(--star-blue), 750px 1100px var(--star-warm);
-  animation: twinkle 3s ease-in-out infinite;
-}
-.twinkle::after { animation-delay: 1.5s; left: 200px; top: 100px; }
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50%      { opacity: 1;   transform: scale(1.3); }
-}
-
-/* Shooting star */
-.shooting-star {
-  position: absolute;
-  top: 20%;
-  left: 0;
-  width: 2px; height: 2px;
-  background: var(--star-pure);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--star-pure), 0 0 20px var(--star-pure);
-  animation: shoot 8s ease-out infinite;
-  opacity: 0;
-}
-.shooting-star::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 80px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--star-pure));
-  transform: translateX(-80px);
-}
-.shooting-star.s2 { top: 60%; animation-delay: 4s; }
-.shooting-star.s3 { top: 40%; animation-delay: 10s; }
-@keyframes shoot {
-  0%   { opacity: 0; transform: translate(0, 0); }
-  5%   { opacity: 1; }
-  20%  { opacity: 1; transform: translate(600px, 200px); }
-  25%  { opacity: 0; transform: translate(750px, 250px); }
-  100% { opacity: 0; transform: translate(750px, 250px); }
-}
-
-main, header, footer { position: relative; z-index: 2; }
-
-/* ============== NAV ============== */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 1.2rem var(--gutter);
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(5, 6, 20, 0.4);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border-bottom: 1px solid transparent;
-  transition: all 380ms var(--ease);
-}
-.nav.scrolled {
-  padding: 0.7rem var(--gutter);
-  background: rgba(5, 6, 20, 0.85);
-  border-bottom: 1px solid rgba(251, 191, 36, 0.12);
-}
-
-.brand {
-  display: flex; align-items: center; gap: 0.7rem;
-  text-decoration: none;
-  color: var(--ink-100);
-  font-family: var(--display);
-  font-size: 1.1rem;
-  letter-spacing: 0.12em;
-}
-.brand-orb {
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--gold-soft), var(--gold) 50%, var(--copper));
-  box-shadow:
-    0 0 12px rgba(251, 191, 36, 0.6),
-    0 0 24px rgba(251, 191, 36, 0.3),
-    inset -2px -2px 4px rgba(0,0,0,0.3);
-  animation: orbPulse 4s ease-in-out infinite;
-}
-@keyframes orbPulse {
-  0%, 100% { box-shadow: 0 0 12px rgba(251, 191, 36, 0.6), 0 0 24px rgba(251, 191, 36, 0.3); }
-  50%      { box-shadow: 0 0 18px rgba(251, 191, 36, 0.9), 0 0 36px rgba(251, 191, 36, 0.5); }
-}
-
-html[data-lang="ta"] .brand { font-family: var(--tamil); letter-spacing: normal; }
-
-.lang-toggle {
-  display: inline-flex;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(251, 191, 36, 0.25);
-  border-radius: 999px;
-  padding: 3px;
-  position: relative;
-  overflow: hidden;
-}
-.lang-toggle button {
-  background: transparent; border: none; cursor: pointer;
-  padding: 0.45rem 1rem;
-  color: var(--ink-60);
-  font-family: var(--display);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  border-radius: 999px;
-  position: relative; z-index: 2;
-  transition: color 280ms var(--ease);
-}
-.lang-toggle button.active { color: var(--night-100); font-weight: 600; }
-.lang-toggle .slider {
-  position: absolute;
-  top: 3px; left: 3px;
-  height: calc(100% - 6px);
-  width: calc(50% - 3px);
-  background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-  border-radius: 999px;
-  transition: transform 420ms var(--ease);
-  z-index: 1;
-  box-shadow: 0 2px 12px rgba(251, 191, 36, 0.4);
-}
-html[data-lang="ta"] .lang-toggle .slider { transform: translateX(100%); }
-html[data-lang="ta"] .lang-toggle button { font-family: var(--tamil); }
-
-/* ============== HERO ============== */
-.hero {
-  min-height: 100vh;
-  padding: 7rem var(--gutter) 5rem;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center;
-  position: relative;
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-/* Zodiac wheel — slowly rotating ring */
-.zodiac-wheel {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 520px; height: 520px;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0;
-  animation: wheelFadeIn 2.5s var(--ease-out) 0.5s forwards;
-}
-@keyframes wheelFadeIn { to { opacity: 1; } }
-
-@media (max-width: 600px) { .zodiac-wheel { width: 360px; height: 360px; } }
-
-.zodiac-wheel .ring-rotate {
-  width: 100%; height: 100%;
-  animation: rotate 120s linear infinite;
-  transform-origin: center;
-}
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-.zodiac-wheel .ring-rotate-rev {
-  position: absolute;
-  inset: 0;
-  animation: rotate 80s linear infinite reverse;
-  transform-origin: center;
-}
-
-.zodiac-wheel svg { width: 100%; height: 100%; overflow: visible; }
-.zodiac-wheel .ring-circle {
-  fill: none;
-  stroke: rgba(251, 191, 36, 0.22);
-  stroke-width: 0.5;
-}
-.zodiac-wheel .ring-circle.outer { stroke: rgba(251, 191, 36, 0.28); }
-.zodiac-wheel .ring-line {
-  stroke: rgba(251, 191, 36, 0.15);
-  stroke-width: 0.4;
-}
-.zodiac-wheel .ring-glyph {
-  fill: var(--gold);
-  font-family: var(--display);
-  font-size: 14px;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5));
-}
-.zodiac-wheel .center-dot {
-  fill: var(--gold-soft);
-  filter: drop-shadow(0 0 8px var(--gold));
-}
-
-.hero-content {
-  position: relative;
-  z-index: 5;
-}
-
-.hero-shloka {
-  font-family: var(--tamil);
-  font-size: 0.95rem;
-  color: var(--gold-soft);
-  letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: heroFadeUp 1s var(--ease-out) 1.2s forwards;
-  text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
-}
-
-.hero-title {
-  font-family: var(--tamil);
-  font-weight: 600;
-  font-size: clamp(3rem, 9vw, 6rem);
-  line-height: 1;
-  letter-spacing: -0.01em;
-  color: var(--ink-100);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: heroFadeUp 1.2s var(--ease-out) 1.4s forwards;
-  background: linear-gradient(135deg, #fff 0%, var(--gold-soft) 50%, #fff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 60px rgba(251, 191, 36, 0.3);
-}
-
-@keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero-divider {
-  display: inline-flex; align-items: center; gap: 1.2rem;
-  margin: 1.5rem 0 2.5rem;
-  opacity: 0;
-  animation: heroFadeUp 1s var(--ease-out) 1.7s forwards;
-}
-.hero-divider .arc {
-  height: 1px;
-  width: 60px;
-  background: linear-gradient(90deg, transparent, var(--gold-soft));
-}
-.hero-divider .arc.right {
-  background: linear-gradient(90deg, var(--gold-soft), transparent);
-}
-.hero-divider .glyph {
-  color: var(--gold);
-  font-size: 1rem;
-  filter: drop-shadow(0 0 6px var(--gold));
-}
-
-.hero-name {
-  font-family: var(--display);
-  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-  letter-spacing: 0.32em;
-  color: var(--gold-soft);
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: heroFadeUp 1s var(--ease-out) 1.7s forwards;
-}
-html[data-lang="ta"] .hero-name { font-family: var(--tamil); letter-spacing: normal; text-transform: none; }
-
-.hero-meta {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--ink-80);
-  margin-top: 1rem;
-  opacity: 0;
-  animation: heroFadeUp 1s var(--ease-out) 1.9s forwards;
-  display: flex; flex-direction: column; gap: 0.4rem;
-}
-html[data-lang="ta"] .hero-meta { font-family: var(--tamil); font-style: normal; }
-.hero-meta .row {
-  display: flex; align-items: center; justify-content: center; gap: 1rem;
-  flex-wrap: wrap;
-}
-.hero-meta .sep {
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-  display: inline-block;
-}
-.hero-meta strong { color: var(--gold-soft); font-weight: 500; }
-
-.scroll-cue {
-  position: absolute;
-  bottom: 2.5rem; left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--display);
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  color: var(--ink-40);
-  text-transform: uppercase;
-  opacity: 0;
-  animation: heroFadeUp 1s var(--ease-out) 2.5s forwards, scrollBob 2.4s ease-in-out 2.5s infinite;
-  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
-}
-.scroll-cue .arrow {
-  width: 1px; height: 30px;
-  background: linear-gradient(180deg, transparent, var(--gold));
-}
-html[data-lang="ta"] .scroll-cue { font-family: var(--tamil); letter-spacing: 0.05em; text-transform: none; }
-@keyframes scrollBob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(8px); }
-}
-
-/* ============== SHLOKA SECTION ============== */
-.shloka-block {
-  max-width: 720px;
-  margin: 8rem auto;
-  padding: 4rem var(--gutter);
-  text-align: center;
-  position: relative;
-}
-.shloka-block::before, .shloka-block::after {
-  content: "✦";
-  position: absolute;
-  font-size: 1.5rem;
-  color: var(--gold);
-  opacity: 0.6;
-  filter: drop-shadow(0 0 8px var(--gold));
-}
-.shloka-block::before { top: 0; left: 50%; transform: translateX(-50%); }
-.shloka-block::after  { bottom: 0; left: 50%; transform: translateX(-50%); }
-
-.shloka {
-  font-family: var(--tamil);
-  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-  line-height: 2.1;
-  color: var(--gold-soft);
-  letter-spacing: 0.02em;
-  font-weight: 500;
-  text-shadow: 0 0 24px rgba(251, 191, 36, 0.2);
-}
-.shloka p { margin-bottom: 0.6rem; }
-.shloka .meaning {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--ink-60);
-  margin-top: 1.8rem;
-  line-height: 1.7;
-  letter-spacing: 0;
-  font-weight: 400;
-  text-shadow: none;
-}
-html[data-lang="ta"] .shloka .meaning { font-family: var(--tamil); font-style: normal; }
-
-/* ============== SECTIONS ============== */
-.section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 6rem var(--gutter) 2rem;
-}
-@media (max-width: 720px) { .section { padding: 4rem var(--gutter) 2rem; } }
-
-.section-head {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.section-num {
-  display: inline-flex;
-  align-items: center; gap: 0.8rem;
-  font-family: var(--display);
-  font-size: 0.78rem;
-  color: var(--gold);
-  letter-spacing: 0.4em;
-  margin-bottom: 1.2rem;
-  text-transform: uppercase;
-}
-.section-num .num-line {
-  display: inline-block;
-  width: 32px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold));
-}
-.section-num .num-line.r { background: linear-gradient(90deg, var(--gold), transparent); }
-
-.section-title {
-  font-family: var(--tamil);
-  font-weight: 600;
-  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-  letter-spacing: -0.01em;
-  color: var(--ink-100);
-  line-height: 1.1;
-  margin-bottom: 0.7rem;
-  background: linear-gradient(180deg, #fff 0%, #d4d0e8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.section-subtitle {
-  font-family: var(--display);
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
-  color: var(--ink-60);
-  text-transform: uppercase;
-}
-html[data-lang="ta"] .section-num { font-family: var(--tamil); letter-spacing: 0.06em; }
-html[data-lang="ta"] .section-subtitle { font-family: var(--tamil); letter-spacing: 0.05em; text-transform: none; }
-
-/* ============== INFO CARDS — celestial glass cards ============== */
-.info-card {
-  background: linear-gradient(135deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(139, 92, 246, 0.04) 50%,
-    rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(251, 191, 36, 0.18);
-  border-radius: 16px;
-  padding: clamp(1.8rem, 4vw, 3rem);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 30px 60px -25px rgba(0, 0, 0, 0.6),
-    0 18px 50px -18px rgba(139, 92, 246, 0.15);
-}
-.info-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.4), transparent 30%, transparent 70%, rgba(139, 92, 246, 0.4));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Constellation dots in corner */
-.info-card .constellation {
-  position: absolute;
-  top: 1.5rem; right: 1.5rem;
-  width: 50px; height: 50px;
-  pointer-events: none;
-  opacity: 0.5;
-}
-.info-card .constellation circle { fill: var(--gold); }
-.info-card .constellation line { stroke: var(--gold); stroke-width: 0.4; opacity: 0.6; }
-
-/* ============== KEY-VALUE LIST ============== */
-.kv {
-  display: grid;
-  grid-template-columns: minmax(170px, 36%) 1fr;
-  gap: 0;
-}
-@media (max-width: 600px) {
-  .kv { grid-template-columns: 1fr; }
-}
-
-.kv-row {
-  display: contents;
-}
-.kv-row .k, .kv-row .v {
-  padding: 1.1rem 0;
-  border-bottom: 1px solid rgba(251, 191, 36, 0.08);
-  transition: border-color 280ms var(--ease);
-}
-.kv-row:last-child .k, .kv-row:last-child .v { border-bottom: none; }
-.kv-row:hover .k, .kv-row:hover .v {
-  border-bottom-color: rgba(251, 191, 36, 0.25);
-}
-
-.kv-row .k {
-  font-family: var(--display);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-60);
-  font-weight: 400;
-  padding-right: 1.5rem;
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.kv-row .k::before {
-  content: "";
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 6px var(--gold);
-  flex-shrink: 0;
-}
-@media (max-width: 600px) {
-  .kv-row .k { padding: 1rem 0 0.3rem; border-bottom: none; }
-  .kv-row .v { padding: 0 0 1rem; }
-}
-
-.kv-row .v {
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  color: var(--ink-100);
-  line-height: 1.5;
-  font-weight: 500;
-}
-.kv-row .v em {
-  color: var(--ink-60);
-  font-size: 0.92rem;
-  font-style: italic;
-}
-
-html[data-lang="ta"] .kv-row .k {
-  font-family: var(--tamil);
-  letter-spacing: 0.04em;
-  text-transform: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-html[data-lang="ta"] .kv-row .v { font-family: var(--tamil); }
-
-.glow {
-  color: var(--gold-soft);
-  font-weight: 600;
-  text-shadow: 0 0 16px rgba(251, 191, 36, 0.4);
-}
-.glow-violet {
-  color: var(--star-violet);
-  font-weight: 600;
-  text-shadow: 0 0 16px rgba(224, 197, 255, 0.4);
-}
-.glow-cyan {
-  color: var(--cyan);
-  font-weight: 600;
-  text-shadow: 0 0 16px rgba(103, 232, 249, 0.4);
-}
-
-/* ============== RASI HIGHLIGHT CARDS ============== */
-.signs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-.sign-card {
-  background: linear-gradient(135deg,
-    rgba(251, 191, 36, 0.05),
-    rgba(139, 92, 246, 0.05));
-  border: 1px solid rgba(251, 191, 36, 0.18);
-  border-radius: 12px;
-  padding: 1.5rem 1.2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: all 380ms var(--ease);
-}
-.sign-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(251, 191, 36, 0.45);
-  box-shadow: 0 18px 40px -15px rgba(251, 191, 36, 0.2);
-}
-.sign-card::before {
-  content: "";
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 380ms var(--ease);
-}
-.sign-card:hover::before { opacity: 1; }
-
-.sign-card .label {
-  font-family: var(--display);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-60);
-  margin-bottom: 0.6rem;
-}
-html[data-lang="ta"] .sign-card .label { font-family: var(--tamil); letter-spacing: 0.04em; text-transform: none; font-size: 0.85rem; }
-
-.sign-card .value {
-  font-family: var(--tamil);
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: var(--gold-soft);
-  margin-bottom: 0.3rem;
-  text-shadow: 0 0 16px rgba(251, 191, 36, 0.3);
-}
-.sign-card .value-en {
-  font-family: var(--display);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  color: var(--ink-60);
-  text-transform: uppercase;
-}
-html[data-lang="ta"] .sign-card .value-en { display: none; }
-
-/* ============== REVEAL ANIMATIONS ============== */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
-}
-.reveal.in { opacity: 1; transform: translateY(0); }
-
-.reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
-}
-.reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
-.reveal-stagger.in > *:nth-child(2) { transition-delay: 0.1s; }
-.reveal-stagger.in > *:nth-child(3) { transition-delay: 0.15s; }
-.reveal-stagger.in > *:nth-child(4) { transition-delay: 0.2s; }
-.reveal-stagger.in > *:nth-child(5) { transition-delay: 0.25s; }
-.reveal-stagger.in > *:nth-child(6) { transition-delay: 0.3s; }
-.reveal-stagger.in > *:nth-child(7) { transition-delay: 0.35s; }
-.reveal-stagger.in > *:nth-child(8) { transition-delay: 0.4s; }
-.reveal-stagger.in > *:nth-child(9) { transition-delay: 0.45s; }
-.reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
-
-/* ============== FOOTER ============== */
-footer {
-  text-align: center;
-  padding: 6rem var(--gutter) 3rem;
-  margin-top: 8rem;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.08), transparent),
-    rgba(0, 0, 0, 0.2);
-  border-top: 1px solid rgba(251, 191, 36, 0.12);
-  position: relative;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  top: -1px; left: 50%;
-  width: 200px; height: 2px;
-  background: radial-gradient(ellipse, var(--gold), transparent);
-  transform: translateX(-50%);
-  filter: blur(2px);
-}
-
-.footer-blessing {
-  font-family: var(--tamil);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 500;
-  color: var(--gold-soft);
-  letter-spacing: 0.06em;
-  margin-bottom: 1.2rem;
-  text-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
-}
-
-.footer-divider {
-  display: flex; align-items: center; justify-content: center; gap: 1rem;
-  margin: 1.5rem 0 2.5rem;
-}
-.footer-divider .line {
-  height: 1px; width: 80px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-.footer-divider .star { color: var(--gold); font-size: 1rem; filter: drop-shadow(0 0 6px var(--gold)); }
-
-.footer-quote {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--ink-60);
-  max-width: 480px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
-}
-html[data-lang="ta"] .footer-quote { font-family: var(--tamil); font-style: normal; }
-
-.footer-links {
-  display: flex; justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.5rem;
-}
-.footer-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(251, 191, 36, 0.25);
-  padding: 0.75rem 1.4rem;
-  border-radius: 999px;
-  text-decoration: none;
-  color: var(--ink-80);
-  font-family: var(--display);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: all 280ms var(--ease);
-  position: relative;
-  overflow: hidden;
-}
-.footer-link::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(139, 92, 246, 0.2));
-  opacity: 0;
-  transition: opacity 280ms var(--ease);
-}
-.footer-link:hover::before { opacity: 1; }
-.footer-link:hover {
-  border-color: var(--gold);
-  color: var(--gold-soft);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px -10px rgba(251, 191, 36, 0.3);
-}
-.footer-link svg { width: 14px; height: 14px; position: relative; z-index: 1; }
-.footer-link span { position: relative; z-index: 1; }
-html[data-lang="ta"] .footer-link { font-family: var(--tamil); letter-spacing: 0.02em; text-transform: none; font-size: 0.95rem; }
-
-.footer-credit {
-  font-family: var(--display);
-  font-size: 0.72rem;
-  letter-spacing: 0.3em;
-  color: var(--ink-40);
-  text-transform: uppercase;
-}
-html[data-lang="ta"] .footer-credit { font-family: var(--tamil); letter-spacing: 0.04em; text-transform: none; }
-
-/* ================= MISC ================= */
-::selection { background: var(--gold); color: var(--night-100); }
-
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--night-100); }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--ink-30), var(--ink-40));
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-pure:#ffffff;--bg-cream:#fdfaf3;--bg-paper:#fbf6ea;--bg-warm:#f5ecd6;
+  --line-soft:#f0e8d4;--line:#e6dcc1;--line-strong:#d4c697;
+  --ink-100:#1a1208;--ink-90:#2a1c0d;--ink-80:#3d2f1e;--ink-70:#4d3d2a;--ink-60:#6b5c44;--ink-50:#8a7a5e;--ink-40:#a89876;--ink-30:#c4b896;
+  --saffron:#c8581c;--saffron-deep:#9d3e0f;--saffron-soft:#e8a05c;--gold:#b8860b;--gold-deep:#8b6508;--maroon:#7f1d1d;--rose:#b91c47;--emerald:#047857;--indigo:#3730a3;
+  --serif:"Fraunces","Hoefler Text",Georgia,serif;--sans:"Inter",-apple-system,system-ui,sans-serif;--tamil:"Noto Sans Tamil",serif;
+  --ease:cubic-bezier(0.22,0.61,0.36,1);--ease-out:cubic-bezier(0.16,1,0.3,1);
+  --gutter:clamp(1.25rem,4vw,3rem);--max:1080px;
+  --shadow-sm:0 1px 2px rgba(26,18,8,0.04),0 1px 3px rgba(26,18,8,0.06);
+  --shadow-md:0 4px 6px -1px rgba(26,18,8,0.05),0 10px 20px -5px rgba(26,18,8,0.08);
+  --shadow-lg:0 10px 15px -3px rgba(26,18,8,0.06),0 20px 40px -10px rgba(200,88,28,0.08);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{background:var(--bg-cream);color:var(--ink-80);font-family:var(--serif);font-size:17px;line-height:1.65;overflow-x:hidden;min-height:100vh;font-feature-settings:"ss01","ss02"}
+html[data-lang="ta"] body :where(p,li,span,a,h1,h2,h3,h4,dt,dd,label,button,em){font-family:var(--tamil);font-style:normal!important}
+.bg-layers{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-warm-1{position:absolute;width:900px;height:900px;top:-300px;right:-200px;background:radial-gradient(circle,rgba(232,160,92,0.18) 0%,rgba(200,88,28,0.08) 30%,transparent 60%);filter:blur(80px)}
+.bg-warm-2{position:absolute;width:700px;height:700px;bottom:10%;left:-200px;background:radial-gradient(circle,rgba(184,134,11,0.1) 0%,transparent 60%);filter:blur(70px)}
+.bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,198,151,0.15) 1px,transparent 1px),linear-gradient(90deg,rgba(212,198,151,0.15) 1px,transparent 1px);background-size:70px 70px;mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,black 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,black 30%,transparent 80%);opacity:0.5}
+main,header,footer{position:relative;z-index:2}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem var(--gutter);display:flex;align-items:center;justify-content:space-between;background:rgba(253,250,243,0.7);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid transparent;transition:all 380ms var(--ease)}
+.nav.scrolled{padding:0.7rem var(--gutter);background:rgba(253,250,243,0.92);border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;color:var(--ink-100);font-family:var(--serif);font-weight:600;font-size:1.15rem;letter-spacing:-0.01em}
+.brand-orb{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--saffron-soft),var(--saffron) 60%,var(--saffron-deep));box-shadow:0 0 12px rgba(200,88,28,0.3),inset -2px -2px 4px rgba(0,0,0,0.15);animation:orbPulse 4s ease-in-out infinite}
+@keyframes orbPulse{0%,100%{box-shadow:0 0 12px rgba(200,88,28,0.3),inset -2px -2px 4px rgba(0,0,0,0.15)}50%{box-shadow:0 0 20px rgba(200,88,28,0.5),inset -2px -2px 4px rgba(0,0,0,0.15)}}
+html[data-lang="ta"] .brand{font-family:var(--tamil)}
+.lang-toggle{display:inline-flex;background:var(--bg-pure);border:1px solid var(--line);border-radius:999px;padding:3px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
+.lang-toggle button{background:transparent;border:none;cursor:pointer;padding:0.45rem 1rem;color:var(--ink-60);font-family:var(--sans);font-size:0.78rem;font-weight:600;letter-spacing:0.04em;border-radius:999px;position:relative;z-index:2;transition:color 280ms var(--ease)}
+.lang-toggle button.active{color:var(--bg-pure)}
+.lang-toggle .slider{position:absolute;top:3px;left:3px;height:calc(100% - 6px);width:calc(50% - 3px);background:linear-gradient(135deg,var(--saffron),var(--saffron-deep));border-radius:999px;transition:transform 420ms var(--ease);z-index:1;box-shadow:0 2px 8px rgba(200,88,28,0.3)}
+html[data-lang="ta"] .lang-toggle .slider{transform:translateX(100%)}
+html[data-lang="ta"] .lang-toggle button{font-family:var(--tamil);font-size:0.95rem}
+.hero{min-height:100vh;padding:7rem var(--gutter) 5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;max-width:var(--max);margin:0 auto}
+.hero-ornament{position:absolute;top:50%;left:50%;width:480px;height:480px;transform:translate(-50%,-54%);opacity:0;animation:ornamentFade 2.2s var(--ease-out) 0.5s forwards;pointer-events:none}
+@keyframes ornamentFade{to{opacity:1}}
+@media(max-width:600px){.hero-ornament{width:320px;height:320px}}
+.hero-ornament .rotate{width:100%;height:100%;animation:rotate 80s linear infinite}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero-ornament svg{width:100%;height:100%}
+.ring{fill:none;stroke:var(--saffron);stroke-width:0.4;opacity:0.3}
+.ring.inner{opacity:0.5}
+.petal{fill:var(--saffron-soft);opacity:0.15}
+.glyph-svg{fill:var(--saffron);font-family:"Noto Sans Tamil",serif;font-size:13px;text-anchor:middle;dominant-baseline:middle;opacity:0.7;font-weight:500}
+.hero-content{position:relative;z-index:5}
+.hero-shloka{font-family:var(--tamil);font-size:0.95rem;color:var(--saffron);letter-spacing:0.04em;margin-bottom:1.5rem;opacity:0;animation:heroFadeUp 1s var(--ease-out) 1.2s forwards}
+.hero-title{font-family:var(--tamil);font-weight:700;font-size:clamp(3.2rem,10vw,6.5rem);line-height:1;letter-spacing:-0.015em;color:var(--ink-100);margin-bottom:1.5rem;opacity:0;animation:heroFadeUp 1.2s var(--ease-out) 1.4s forwards;position:relative}
+.hero-title::after{content:"";position:absolute;bottom:-0.3em;left:50%;transform:translateX(-50%);width:50px;height:4px;background:linear-gradient(90deg,var(--saffron),var(--gold));border-radius:2px}
+@keyframes heroFadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero-divider{display:inline-flex;align-items:center;gap:1.2rem;margin:2rem 0 1.5rem;opacity:0;animation:heroFadeUp 1s var(--ease-out) 1.7s forwards}
+.hero-divider .arc{height:1px;width:60px;background:linear-gradient(90deg,transparent,var(--saffron))}
+.hero-divider .arc.right{background:linear-gradient(90deg,var(--saffron),transparent)}
+.hero-divider .glyph{color:var(--saffron);font-size:1rem}
+.hero-name{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(1.5rem,3.5vw,2.4rem);letter-spacing:0.02em;color:var(--saffron-deep);margin-bottom:2rem;opacity:0;animation:heroFadeUp 1s var(--ease-out) 1.7s forwards}
+html[data-lang="ta"] .hero-name{font-family:var(--tamil);font-style:normal;font-weight:700}
+.hero-meta{font-family:var(--serif);font-size:1.08rem;color:var(--ink-70);margin-top:1rem;opacity:0;animation:heroFadeUp 1s var(--ease-out) 1.9s forwards;display:flex;flex-direction:column;gap:0.4rem}
+html[data-lang="ta"] .hero-meta{font-family:var(--tamil)}
+.hero-meta .row{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.hero-meta .sep{width:4px;height:4px;border-radius:50%;background:var(--saffron);display:inline-block}
+.hero-meta strong{color:var(--saffron-deep);font-weight:600}
+.scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-family:var(--sans);font-size:0.7rem;font-weight:600;letter-spacing:0.3em;color:var(--ink-50);text-transform:uppercase;opacity:0;animation:heroFadeUp 1s var(--ease-out) 2.5s forwards,scrollBob 2.4s ease-in-out 2.5s infinite;display:flex;flex-direction:column;align-items:center;gap:0.6rem}
+.scroll-cue .arrow{width:1px;height:30px;background:linear-gradient(180deg,transparent,var(--saffron))}
+html[data-lang="ta"] .scroll-cue{font-family:var(--tamil);letter-spacing:0.05em;text-transform:none}
+@keyframes scrollBob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.shloka-block{max-width:720px;margin:6rem auto;padding:4rem var(--gutter);text-align:center;position:relative;background:linear-gradient(180deg,transparent,rgba(245,236,214,0.4) 30%,rgba(245,236,214,0.4) 70%,transparent);border-radius:12px}
+.shloka-block::before,.shloka-block::after{content:"✦";position:absolute;font-size:1.4rem;color:var(--saffron)}
+.shloka-block::before{top:1.5rem;left:50%;transform:translateX(-50%)}
+.shloka-block::after{bottom:1.5rem;left:50%;transform:translateX(-50%)}
+.shloka{font-family:var(--tamil);font-size:clamp(1.05rem,2.4vw,1.4rem);line-height:2;color:var(--saffron-deep);letter-spacing:0.01em;font-weight:600}
+.shloka p{margin-bottom:0.5rem}
+.shloka .meaning{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-60);margin-top:1.8rem;line-height:1.7;letter-spacing:0;font-weight:400}
+html[data-lang="ta"] .shloka .meaning{font-family:var(--tamil)}
+.section{max-width:var(--max);margin:0 auto;padding:6rem var(--gutter) 2rem}
+@media(max-width:720px){.section{padding:4rem var(--gutter) 2rem}}
+.section-head{text-align:center;margin-bottom:4rem}
+.section-num{display:inline-flex;align-items:center;gap:0.8rem;font-family:var(--sans);font-size:0.72rem;font-weight:600;color:var(--saffron);letter-spacing:0.4em;margin-bottom:1.4rem;text-transform:uppercase}
+.section-num .num-line{display:inline-block;width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--saffron))}
+.section-num .num-line.r{background:linear-gradient(90deg,var(--saffron),transparent)}
+.section-title{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5.5vw,3.5rem);letter-spacing:-0.02em;color:var(--ink-100);line-height:1.05;margin-bottom:0.8rem;font-feature-settings:"ss01"}
+html[data-lang="ta"] .section-title{font-family:var(--tamil);font-weight:700;letter-spacing:-0.01em}
+.section-title .accent{font-style:italic;color:var(--saffron-deep);font-weight:500}
+html[data-lang="ta"] .section-title .accent{font-style:normal;font-weight:700}
+.section-subtitle{font-family:var(--sans);font-size:0.78rem;font-weight:500;letter-spacing:0.25em;color:var(--ink-50);text-transform:uppercase}
+html[data-lang="ta"] .section-num{font-family:var(--tamil);letter-spacing:0.06em}
+html[data-lang="ta"] .section-subtitle{font-family:var(--tamil);letter-spacing:0.04em;text-transform:none;font-size:0.95rem}
+.info-card{background:var(--bg-pure);border:1px solid var(--line);border-radius:14px;padding:clamp(1.8rem,4vw,3rem);position:relative;overflow:hidden;box-shadow:var(--shadow-md);transition:box-shadow 380ms var(--ease)}
+.info-card:hover{box-shadow:var(--shadow-lg)}
+.info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--saffron),var(--gold),var(--saffron))}
+.info-card .number-badge{position:absolute;top:1.5rem;right:1.5rem;width:44px;height:44px;background:var(--bg-paper);border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.1rem;color:var(--saffron-deep)}
+.kv{display:grid;grid-template-columns:minmax(180px,36%) 1fr;gap:0}
+@media(max-width:600px){.kv{grid-template-columns:1fr}}
+.kv-row{display:contents}
+.kv-row .k,.kv-row .v{padding:1.1rem 0;border-bottom:1px solid var(--line-soft)}
+.kv-row:last-child .k,.kv-row:last-child .v{border-bottom:none}
+.kv-row .k{font-family:var(--sans);font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-50);padding-right:1.5rem;display:flex;align-items:center;gap:0.7rem;align-self:center}
+.kv-row .k::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--saffron);flex-shrink:0}
+@media(max-width:600px){.kv-row .k{padding:1rem 0 0.3rem;border-bottom:none}.kv-row .v{padding:0 0 1rem}}
+.kv-row .v{font-family:var(--serif);font-size:1.18rem;color:var(--ink-100);line-height:1.5;font-weight:500}
+.kv-row .v em{color:var(--ink-60);font-size:0.95rem;font-style:italic;font-weight:400}
+html[data-lang="ta"] .kv-row .k{font-family:var(--tamil);letter-spacing:0.04em;text-transform:none;font-weight:700;font-size:0.95rem;color:var(--saffron-deep)}
+html[data-lang="ta"] .kv-row .v{font-family:var(--tamil)}
+.glow{color:var(--saffron-deep);font-weight:700}
+.glow-rose{color:var(--rose);font-weight:600}
+.glow-emerald{color:var(--emerald);font-weight:600}
+.signs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.sign-card{background:var(--bg-pure);border:1px solid var(--line);border-radius:14px;padding:1.8rem 1.4rem;text-align:center;position:relative;overflow:hidden;transition:all 380ms var(--ease);box-shadow:var(--shadow-sm)}
+.sign-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--saffron),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 380ms var(--ease)}
+.sign-card:hover{transform:translateY(-4px);border-color:var(--saffron-soft);box-shadow:var(--shadow-lg)}
+.sign-card:hover::before{transform:scaleX(1)}
+.sign-card .label{font-family:var(--sans);font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-50);margin-bottom:0.8rem}
+html[data-lang="ta"] .sign-card .label{font-family:var(--tamil);letter-spacing:0.04em;text-transform:none;font-size:0.85rem;font-weight:600;color:var(--saffron-deep)}
+.sign-card .value{font-family:var(--tamil);font-weight:700;font-size:1.55rem;color:var(--saffron-deep);margin-bottom:0.5rem;letter-spacing:-0.01em}
+.sign-card .value-en{font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.16em;color:var(--ink-50);text-transform:uppercase}
+html[data-lang="ta"] .sign-card .value-en{display:none}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.9s var(--ease-out),transform 0.9s var(--ease-out)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(25px);transition:opacity 0.7s var(--ease-out),transform 0.7s var(--ease-out)}
+.reveal-stagger.in>*:nth-child(1){transition-delay:0.05s}
+.reveal-stagger.in>*:nth-child(2){transition-delay:0.1s}
+.reveal-stagger.in>*:nth-child(3){transition-delay:0.15s}
+.reveal-stagger.in>*:nth-child(4){transition-delay:0.2s}
+.reveal-stagger.in>*:nth-child(5){transition-delay:0.25s}
+.reveal-stagger.in>*:nth-child(6){transition-delay:0.3s}
+.reveal-stagger.in>*:nth-child(7){transition-delay:0.35s}
+.reveal-stagger.in>*:nth-child(8){transition-delay:0.4s}
+.reveal-stagger.in>*:nth-child(9){transition-delay:0.45s}
+.reveal-stagger.in>*{opacity:1;transform:translateY(0)}
+footer{text-align:center;padding:5rem var(--gutter) 3rem;margin-top:6rem;background:linear-gradient(180deg,var(--bg-cream),var(--bg-warm));border-top:1px solid var(--line);position:relative}
+.footer-blessing{font-family:var(--tamil);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:var(--saffron-deep);letter-spacing:0.04em;margin-bottom:1.2rem}
+.footer-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin:1.5rem 0 2.2rem}
+.footer-divider .line{height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--saffron),transparent)}
+.footer-divider .star{color:var(--saffron);font-size:1rem}
+.footer-quote{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-60);max-width:480px;margin:0 auto 2.5rem;line-height:1.7}
+html[data-lang="ta"] .footer-quote{font-family:var(--tamil)}
+.footer-links{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.footer-link{display:inline-flex;align-items:center;gap:0.5rem;background:var(--bg-pure);border:1px solid var(--line);padding:0.8rem 1.5rem;border-radius:999px;text-decoration:none;color:var(--ink-80);font-family:var(--sans);font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;transition:all 280ms var(--ease);box-shadow:var(--shadow-sm)}
+.footer-link:hover{border-color:var(--saffron);color:var(--saffron-deep);background:var(--bg-paper);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.footer-link svg{width:14px;height:14px}
+html[data-lang="ta"] .footer-link{font-family:var(--tamil);letter-spacing:0.02em;text-transform:none;font-size:0.95rem}
+.footer-credit{font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.25em;color:var(--ink-50);text-transform:uppercase}
+html[data-lang="ta"] .footer-credit{font-family:var(--tamil);letter-spacing:0.04em;text-transform:none}
+::selection{background:var(--saffron);color:var(--bg-pure)}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg-cream)}
+::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:var(--saffron)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}}
 </style>
 </head>
 <body>
-
-<!-- ============== COSMIC BACKGROUND ============== -->
-<div class="cosmos">
-  <div class="nebula-1"></div>
-  <div class="nebula-2"></div>
-  <div class="nebula-3"></div>
-  <div class="twinkle"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star s2"></div>
-  <div class="shooting-star s3"></div>
+<div class="bg-layers">
+  <div class="bg-warm-1"></div>
+  <div class="bg-warm-2"></div>
+  <div class="bg-grid"></div>
 </div>
 
-<!-- ============== NAV ============== -->
 <header class="nav" id="nav">
   <a href="#top" class="brand">
     <span class="brand-orb"></span>
@@ -918,71 +178,46 @@ html[data-lang="ta"] .footer-credit { font-family: var(--tamil); letter-spacing:
 
 <main id="top">
 
-<!-- ============== HERO ============== -->
 <section class="hero">
-
-  <!-- Animated zodiac wheel behind the title -->
-  <div class="zodiac-wheel">
-    <div class="ring-rotate">
+  <div class="hero-ornament">
+    <div class="rotate">
       <svg viewBox="0 0 400 400">
-        <!-- Outer ring -->
-        <circle class="ring-circle outer" cx="200" cy="200" r="195"/>
-        <circle class="ring-circle" cx="200" cy="200" r="175"/>
-        <!-- 12 division lines -->
-        <g>
-          <line class="ring-line" x1="200" y1="5" x2="200" y2="395"/>
-          <line class="ring-line" x1="5" y1="200" x2="395" y2="200"/>
-          <line class="ring-line" x1="62" y1="62" x2="338" y2="338"/>
-          <line class="ring-line" x1="62" y1="338" x2="338" y2="62"/>
-          <line class="ring-line" x1="115" y1="22" x2="285" y2="378"/>
-          <line class="ring-line" x1="285" y1="22" x2="115" y2="378"/>
-          <line class="ring-line" x1="22" y1="115" x2="378" y2="285"/>
-          <line class="ring-line" x1="22" y1="285" x2="378" y2="115"/>
-        </g>
-        <!-- Tamil Rasi names around outer ring -->
-        <text class="ring-glyph" x="200" y="20" font-family="Noto Sans Tamil">மேஷம்</text>
-        <text class="ring-glyph" x="290" y="50">ரிஷபம்</text>
-        <text class="ring-glyph" x="360" y="115">மிதுனம்</text>
-        <text class="ring-glyph" x="383" y="200">கடகம்</text>
-        <text class="ring-glyph" x="360" y="290">சிம்மம்</text>
-        <text class="ring-glyph" x="290" y="355">கன்னி</text>
-        <text class="ring-glyph" x="200" y="383">துலாம்</text>
-        <text class="ring-glyph" x="110" y="355">விருச்சிகம்</text>
-        <text class="ring-glyph" x="40" y="290">தனுசு</text>
-        <text class="ring-glyph" x="17" y="200">மகரம்</text>
-        <text class="ring-glyph" x="40" y="115">கும்பம்</text>
-        <text class="ring-glyph" x="110" y="50">மீனம்</text>
-      </svg>
-    </div>
-    <div class="ring-rotate-rev">
-      <svg viewBox="0 0 400 400">
-        <circle class="ring-circle" cx="200" cy="200" r="140"/>
-        <circle class="ring-circle" cx="200" cy="200" r="100"/>
-        <!-- 9 navamsa divisions -->
-        <g>
-          <line class="ring-line" x1="200" y1="60" x2="200" y2="340" stroke-width="0.3"/>
-          <line class="ring-line" x1="60" y1="200" x2="340" y2="200" stroke-width="0.3"/>
-          <line class="ring-line" x1="100" y1="100" x2="300" y2="300" stroke-width="0.3"/>
-          <line class="ring-line" x1="300" y1="100" x2="100" y2="300" stroke-width="0.3"/>
-        </g>
-        <circle class="center-dot" cx="200" cy="200" r="3"/>
+        <circle class="ring" cx="200" cy="200" r="195"/>
+        <circle class="ring inner" cx="200" cy="200" r="170"/>
+        <circle class="ring" cx="200" cy="200" r="120"/>
+        <path class="petal" d="M200 30 Q220 90 200 130 Q180 90 200 30Z"/>
+        <path class="petal" d="M200 370 Q220 310 200 270 Q180 310 200 370Z"/>
+        <path class="petal" d="M30 200 Q90 220 130 200 Q90 180 30 200Z"/>
+        <path class="petal" d="M370 200 Q310 220 270 200 Q310 180 370 200Z"/>
+        <path class="petal" d="M70 70 Q120 105 130 130 Q105 120 70 70Z"/>
+        <path class="petal" d="M330 70 Q280 105 270 130 Q295 120 330 70Z"/>
+        <path class="petal" d="M70 330 Q120 295 130 270 Q105 280 70 330Z"/>
+        <path class="petal" d="M330 330 Q280 295 270 270 Q295 280 330 330Z"/>
+        <text class="glyph-svg" x="200" y="20">மேஷம்</text>
+        <text class="glyph-svg" x="290" y="50">ரிஷபம்</text>
+        <text class="glyph-svg" x="360" y="115">மிதுனம்</text>
+        <text class="glyph-svg" x="383" y="200">கடகம்</text>
+        <text class="glyph-svg" x="360" y="290">சிம்மம்</text>
+        <text class="glyph-svg" x="290" y="355">கன்னி</text>
+        <text class="glyph-svg" x="200" y="383">துலாம்</text>
+        <text class="glyph-svg" x="110" y="355">விருச்சிகம்</text>
+        <text class="glyph-svg" x="40" y="290">தனுசு</text>
+        <text class="glyph-svg" x="17" y="200">மகரம்</text>
+        <text class="glyph-svg" x="40" y="115">கும்பம்</text>
+        <text class="glyph-svg" x="110" y="50">மீனம்</text>
       </svg>
     </div>
   </div>
 
   <div class="hero-content">
     <div class="hero-shloka">|| ஶ்ரீ கணேசாய நமஃ ||</div>
-
     <h1 class="hero-title">ஜாதகம்</h1>
-
     <div class="hero-divider">
       <span class="arc"></span>
       <span class="glyph">✦</span>
       <span class="arc right"></span>
     </div>
-
-    <div class="hero-name" data-en="JOTHISHWARAN" data-ta="ஜோதிஸ்வரன்">JOTHISHWARAN</div>
-
+    <div class="hero-name" data-en="Jothishwaran" data-ta="ஜோதிஸ்வரன்">Jothishwaran</div>
     <div class="hero-meta">
       <div class="row">
         <span data-en="Born 19 March 2000" data-ta="பிறந்த நாள்: 19 மார்ச் 2000">Born 19 March 2000</span>
@@ -994,459 +229,231 @@ html[data-lang="ta"] .footer-credit { font-family: var(--tamil); letter-spacing:
       </div>
     </div>
   </div>
-
   <div class="scroll-cue">
-    <span data-en="explore" data-ta="மேலும் காண">explore</span>
+    <span data-en="Explore" data-ta="மேலும் காண">Explore</span>
     <span class="arrow"></span>
   </div>
 </section>
 
-<!-- ============== SHLOKA ============== -->
 <section class="shloka-block reveal">
   <div class="shloka">
     <p>ஜெனனி ஜனிதம் சௌக்யாதி வர்த்ததே</p>
     <p>குலே சுப்ரதம் பதம் சுரிவ பின்யாஞ்ச</p>
     <p>விச்வயதே ஜென்ம பத்திரிகா</p>
-    <p class="meaning"
-       data-en="May this birth chart bring auspiciousness, prosperity, and well-being to the native and their family — through every step of life."
-       data-ta="இந்த ஜாதகம் பிறந்தவருக்கும் அவரது குடும்பத்துக்கும் வாழ்வின் ஒவ்வொரு படிநிலையிலும் சுபம், செழிப்பு, நலம் நல்க வாழ்த்துகள்.">
+    <p class="meaning" data-en="May this birth chart bring auspiciousness, prosperity, and well-being to the native and their family — through every step of life." data-ta="இந்த ஜாதகம் பிறந்தவருக்கும் அவரது குடும்பத்துக்கும் வாழ்வின் ஒவ்வொரு படிநிலையிலும் சுபம், செழிப்பு, நலம் நல்க வாழ்த்துகள்.">
       May this birth chart bring auspiciousness, prosperity, and well-being to the native and their family — through every step of life.
     </p>
   </div>
 </section>
 
-<!-- ============== SECTION 1: PERSONAL ============== -->
 <section id="personal" class="section">
   <div class="section-head reveal">
     <div class="section-num">
       <span class="num-line"></span>
-      <span>I · Native</span>
+      <span data-en="I · Native" data-ta="I · பிறந்தவர்">I · Native</span>
       <span class="num-line r"></span>
     </div>
-    <h2 class="section-title" data-en="Personal &amp; Birth Details" data-ta="தனிப்பட்ட &amp; பிறப்பு விவரங்கள்">Personal &amp; Birth Details</h2>
+    <h2 class="section-title" data-en-html="Personal &amp; <span class='accent'>Birth Details</span>" data-ta-html="தனிப்பட்ட &amp; <span class='accent'>பிறப்பு விவரங்கள்</span>">
+      Personal &amp; <span class="accent">Birth Details</span>
+    </h2>
     <div class="section-subtitle" data-en="The Native &amp; Family" data-ta="பிறந்தவர் &amp; குடும்பம்">The Native &amp; Family</div>
   </div>
-
   <div class="info-card reveal">
-    <svg class="constellation" viewBox="0 0 50 50">
-      <circle cx="10" cy="15" r="1.2"/>
-      <circle cx="25" cy="8" r="1.5"/>
-      <circle cx="40" cy="20" r="1"/>
-      <circle cx="35" cy="38" r="1.3"/>
-      <circle cx="15" cy="40" r="1"/>
-      <line x1="10" y1="15" x2="25" y2="8"/>
-      <line x1="25" y1="8" x2="40" y2="20"/>
-      <line x1="40" y1="20" x2="35" y2="38"/>
-      <line x1="35" y1="38" x2="15" y2="40"/>
-      <line x1="15" y1="40" x2="10" y2="15"/>
-    </svg>
-
+    <div class="number-badge">i</div>
     <div class="kv reveal-stagger">
-      <div class="kv-row">
-        <div class="k" data-en="Name" data-ta="பெயர்">Name</div>
-        <div class="v"><span class="glow" data-en="Jothishwaran" data-ta="ஜோதிஸ்வரன்">Jothishwaran</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Father" data-ta="தந்தை">Father</div>
-        <div class="v" data-en="Mr. R. Ramachandran" data-ta="திரு. R. ராமச்சந்திரன்">Mr. R. Ramachandran</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Mother" data-ta="தாய்">Mother</div>
-        <div class="v" data-en="Mrs. R. Sathya" data-ta="திருமதி R. சத்யா">Mrs. R. Sathya</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Date of Birth" data-ta="பிறந்த தேதி">Date of Birth</div>
-        <div class="v"
-             data-en-html='Night of <span class="glow">18 March</span> / Early morning of <span class="glow">19 March, 2000</span>'
-             data-ta-html='<span class="glow">18 மார்ச்</span> இரவு / <span class="glow">19 மார்ச் 2000</span> அதிகாலை'>
-          Night of <span class="glow">18 March</span> / Early morning of <span class="glow">19 March, 2000</span>
-        </div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Time of Birth" data-ta="பிறந்த நேரம்">Time of Birth</div>
-        <div class="v"><span class="glow">2:57 AM</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Day of Week" data-ta="கிழமை">Day of Week</div>
-        <div class="v" data-en="Saturday night → Sunday early morning" data-ta="சனிக்கிழமை இரவு → ஞாயிறு அதிகாலை">Saturday night → Sunday early morning</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Place" data-ta="இடம்">Place</div>
-        <div class="v" data-en="Tiruvannamalai District, Tamil Nadu" data-ta="திருவண்ணாமலை மாவட்டம், தமிழ்நாடு">Tiruvannamalai District, Tamil Nadu</div>
-      </div>
+      <div class="kv-row"><div class="k" data-en="Name" data-ta="பெயர்">Name</div><div class="v"><span class="glow" data-en="Jothishwaran" data-ta="ஜோதிஸ்வரன்">Jothishwaran</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Father" data-ta="தந்தை">Father</div><div class="v" data-en="Mr. R. Ramachandran" data-ta="திரு. R. ராமச்சந்திரன்">Mr. R. Ramachandran</div></div>
+      <div class="kv-row"><div class="k" data-en="Mother" data-ta="தாய்">Mother</div><div class="v" data-en="Mrs. R. Sathya" data-ta="திருமதி R. சத்யா">Mrs. R. Sathya</div></div>
+      <div class="kv-row"><div class="k" data-en="Date of Birth" data-ta="பிறந்த தேதி">Date of Birth</div><div class="v" data-en-html="Night of <span class='glow'>18 March</span> / Early morning of <span class='glow'>19 March, 2000</span>" data-ta-html="<span class='glow'>18 மார்ச்</span> இரவு / <span class='glow'>19 மார்ச் 2000</span> அதிகாலை">Night of <span class="glow">18 March</span> / Early morning of <span class="glow">19 March, 2000</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Time of Birth" data-ta="பிறந்த நேரம்">Time of Birth</div><div class="v"><span class="glow">2:57 AM</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Day of Week" data-ta="கிழமை">Day of Week</div><div class="v" data-en="Saturday night → Sunday early morning" data-ta="சனிக்கிழமை இரவு → ஞாயிறு அதிகாலை">Saturday night → Sunday early morning</div></div>
+      <div class="kv-row"><div class="k" data-en="Place" data-ta="இடம்">Place</div><div class="v" data-en="Tiruvannamalai District, Tamil Nadu" data-ta="திருவண்ணாமலை மாவட்டம், தமிழ்நாடு">Tiruvannamalai District, Tamil Nadu</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============== SECTION 2: SIGNS ============== -->
 <section id="signs" class="section">
   <div class="section-head reveal">
     <div class="section-num">
       <span class="num-line"></span>
-      <span>II · Signs</span>
+      <span data-en="II · Signs" data-ta="II · அடையாளங்கள்">II · Signs</span>
       <span class="num-line r"></span>
     </div>
-    <h2 class="section-title" data-en="Core Astrological Signs" data-ta="முக்கிய ஜோதிட அடையாளங்கள்">Core Astrological Signs</h2>
+    <h2 class="section-title" data-en-html="Core <span class='accent'>Astrological Signs</span>" data-ta-html="முக்கிய <span class='accent'>ஜோதிட அடையாளங்கள்</span>">
+      Core <span class="accent">Astrological Signs</span>
+    </h2>
     <div class="section-subtitle" data-en="Lagna · Rasi · Nakshatra" data-ta="லக்னம் · ராசி · நட்சத்திரம்">Lagna · Rasi · Nakshatra</div>
   </div>
-
   <div class="signs-grid reveal-stagger reveal">
-    <div class="sign-card">
-      <div class="label" data-en="Lagna · Ascendant" data-ta="லக்னம்">Lagna · Ascendant</div>
-      <div class="value" data-en="Capricorn" data-ta="மகரம்">Capricorn</div>
-      <div class="value-en">CAPRICORN · MAGARAM</div>
-    </div>
-    <div class="sign-card">
-      <div class="label" data-en="Rasi · Moon" data-ta="ராசி">Rasi · Moon</div>
-      <div class="value" data-en="Leo" data-ta="சிம்மம்">Leo</div>
-      <div class="value-en">LEO · SIMMAM</div>
-    </div>
-    <div class="sign-card">
-      <div class="label" data-en="Birth Star" data-ta="பிறப்பு நட்சத்திரம்">Birth Star</div>
-      <div class="value" data-en="Pooram" data-ta="பூரம்">Pooram</div>
-      <div class="value-en">2ND PADAM</div>
-    </div>
-    <div class="sign-card">
-      <div class="label" data-en="Navamsa" data-ta="நவாம்சம்">Navamsa</div>
-      <div class="value" data-en="Aries" data-ta="மேஷம்">Aries</div>
-      <div class="value-en">ARIES · MESHAM</div>
-    </div>
-    <div class="sign-card">
-      <div class="label" data-en="Ashtama (8th)" data-ta="அஷ்டம லக்னம்">Ashtama (8th)</div>
-      <div class="value" data-en="Leo" data-ta="சிம்மம்">Leo</div>
-      <div class="value-en">LEO · SIMMAM</div>
-    </div>
-    <div class="sign-card">
-      <div class="label" data-en="Name Letters" data-ta="பெயர் எழுத்துகள்">Name Letters</div>
-      <div class="value" data-en="Mo · Taa · Tee · Too" data-ta="மோ · டா · டி · டு">Mo · Taa · Tee · Too</div>
-      <div class="value-en">MO · TAA · TEE · TOO</div>
-    </div>
+    <div class="sign-card"><div class="label" data-en="Lagna · Ascendant" data-ta="லக்னம்">Lagna · Ascendant</div><div class="value" data-en="Capricorn" data-ta="மகரம்">Capricorn</div><div class="value-en">Magaram</div></div>
+    <div class="sign-card"><div class="label" data-en="Rasi · Moon" data-ta="ராசி">Rasi · Moon</div><div class="value" data-en="Leo" data-ta="சிம்மம்">Leo</div><div class="value-en">Simmam</div></div>
+    <div class="sign-card"><div class="label" data-en="Birth Star" data-ta="பிறப்பு நட்சத்திரம்">Birth Star</div><div class="value" data-en="Pooram" data-ta="பூரம்">Pooram</div><div class="value-en">2nd Padam</div></div>
+    <div class="sign-card"><div class="label" data-en="Navamsa" data-ta="நவாம்சம்">Navamsa</div><div class="value" data-en="Aries" data-ta="மேஷம்">Aries</div><div class="value-en">Mesham</div></div>
+    <div class="sign-card"><div class="label" data-en="Ashtama (8th)" data-ta="அஷ்டம லக்னம்">Ashtama (8th)</div><div class="value" data-en="Leo" data-ta="சிம்மம்">Leo</div><div class="value-en">Simmam</div></div>
+    <div class="sign-card"><div class="label" data-en="Name Letters" data-ta="பெயர் எழுத்துகள்">Name Letters</div><div class="value" data-en="Mo · Taa · Tee · Too" data-ta="மோ · டா · டி · டு">Mo · Taa · Tee · Too</div><div class="value-en">First syllables</div></div>
   </div>
 </section>
 
-<!-- ============== SECTION 3: PANCHANGAM ============== -->
 <section id="panchangam" class="section">
   <div class="section-head reveal">
     <div class="section-num">
       <span class="num-line"></span>
-      <span>III · Almanac</span>
+      <span data-en="III · Almanac" data-ta="III · பஞ்சாங்கம்">III · Almanac</span>
       <span class="num-line r"></span>
     </div>
-    <h2 class="section-title" data-en="Panchangam at Birth" data-ta="பிறப்பின் பஞ்சாங்கம்">Panchangam at Birth</h2>
+    <h2 class="section-title" data-en-html="Panchangam <span class='accent'>at Birth</span>" data-ta-html="பிறப்பின் <span class='accent'>பஞ்சாங்கம்</span>">
+      Panchangam <span class="accent">at Birth</span>
+    </h2>
     <div class="section-subtitle" data-en="Lunar Phase &amp; Cosmic Time" data-ta="சந்திர நிலை &amp; கால அமைப்பு">Lunar Phase &amp; Cosmic Time</div>
   </div>
-
   <div class="info-card reveal">
-    <svg class="constellation" viewBox="0 0 50 50">
-      <circle cx="12" cy="20" r="1"/>
-      <circle cx="22" cy="12" r="1.4"/>
-      <circle cx="32" cy="22" r="1"/>
-      <circle cx="42" cy="14" r="1.2"/>
-      <circle cx="38" cy="36" r="1.3"/>
-      <circle cx="20" cy="42" r="1"/>
-      <line x1="12" y1="20" x2="22" y2="12"/>
-      <line x1="22" y1="12" x2="32" y2="22"/>
-      <line x1="32" y1="22" x2="42" y2="14"/>
-      <line x1="32" y1="22" x2="38" y2="36"/>
-      <line x1="38" y1="36" x2="20" y2="42"/>
-    </svg>
-
+    <div class="number-badge">ii</div>
     <div class="kv reveal-stagger">
-      <div class="kv-row">
-        <div class="k" data-en="Tamil Year" data-ta="தமிழ் வருஷம்">Tamil Year</div>
-        <div class="v"><span class="glow-violet" data-en="Pramathi" data-ta="பிரமாதி">Pramathi</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Tamil Month" data-ta="தமிழ் மாதம்">Tamil Month</div>
-        <div class="v"><span class="glow-violet" data-en="Panguni" data-ta="பங்குனி">Panguni</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Tamil Day" data-ta="தமிழ் தேதி">Tamil Day</div>
-        <div class="v" data-en="5th day" data-ta="5-ம் நாள்">5th day</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Paksham" data-ta="பட்சம்">Paksham</div>
-        <div class="v" data-en-html='Sukla Paksham <em>(Waxing Moon)</em>' data-ta-html='சுக்ல பட்சம் <em>(வளர் பிறை)</em>'>Sukla Paksham <em>(Waxing Moon)</em></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Tithi" data-ta="திதி">Tithi</div>
-        <div class="v" data-en-html='Trayodasi <em>(13th lunar day)</em>' data-ta-html='த்ரயோதசி <em>(13-ம் சந்திர நாள்)</em>'>Trayodasi <em>(13th lunar day)</em></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Yogam" data-ta="யோகம்">Yogam</div>
-        <div class="v"><span class="glow" data-en="Siddha Yogam" data-ta="சித்த யோகம்">Siddha Yogam</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Karnam" data-ta="கரணம்">Karnam</div>
-        <div class="v" data-en="Thaithula Karnam" data-ta="தைதுல கரணம்">Thaithula Karnam</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Hora at Birth" data-ta="பிறந்த ஹோரை">Hora at Birth</div>
-        <div class="v" data-en-html='Chandra Hora <em>(Sathveega Velai — peaceful period)</em>' data-ta-html='சந்திர ஹோரை <em>(சாத்வீக வேளை — அமைதி நேரம்)</em>'>Chandra Hora <em>(Sathveega Velai — peaceful period)</em></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Time from Sunrise" data-ta="சூரிய உதயத்திலிருந்து">Time from Sunrise</div>
-        <div class="v" data-en="51 Nazhigai, 30 Vinadigal after previous sunrise" data-ta="முந்தைய சூரிய உதயத்திலிருந்து 51 நாழிகை, 30 விநாடிகள்">51 Nazhigai, 30 Vinadigal after previous sunrise</div>
-      </div>
+      <div class="kv-row"><div class="k" data-en="Tamil Year" data-ta="தமிழ் வருஷம்">Tamil Year</div><div class="v"><span class="glow" data-en="Pramathi" data-ta="பிரமாதி">Pramathi</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Tamil Month" data-ta="தமிழ் மாதம்">Tamil Month</div><div class="v"><span class="glow" data-en="Panguni" data-ta="பங்குனி">Panguni</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Tamil Day" data-ta="தமிழ் தேதி">Tamil Day</div><div class="v" data-en="5th day" data-ta="5-ம் நாள்">5th day</div></div>
+      <div class="kv-row"><div class="k" data-en="Paksham" data-ta="பட்சம்">Paksham</div><div class="v" data-en-html="Sukla Paksham <em>(Waxing Moon)</em>" data-ta-html="சுக்ல பட்சம் <em>(வளர் பிறை)</em>">Sukla Paksham <em>(Waxing Moon)</em></div></div>
+      <div class="kv-row"><div class="k" data-en="Tithi" data-ta="திதி">Tithi</div><div class="v" data-en-html="Trayodasi <em>(13th lunar day)</em>" data-ta-html="த்ரயோதசி <em>(13-ம் சந்திர நாள்)</em>">Trayodasi <em>(13th lunar day)</em></div></div>
+      <div class="kv-row"><div class="k" data-en="Yogam" data-ta="யோகம்">Yogam</div><div class="v"><span class="glow-emerald" data-en="Siddha Yogam" data-ta="சித்த யோகம்">Siddha Yogam</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Karnam" data-ta="கரணம்">Karnam</div><div class="v" data-en="Thaithula Karnam" data-ta="தைதுல கரணம்">Thaithula Karnam</div></div>
+      <div class="kv-row"><div class="k" data-en="Hora at Birth" data-ta="பிறந்த ஹோரை">Hora at Birth</div><div class="v" data-en-html="Chandra Hora <em>(Sathveega Velai — peaceful period)</em>" data-ta-html="சந்திர ஹோரை <em>(சாத்வீக வேளை — அமைதி நேரம்)</em>">Chandra Hora <em>(Sathveega Velai — peaceful period)</em></div></div>
+      <div class="kv-row"><div class="k" data-en="Time from Sunrise" data-ta="சூரிய உதயத்திலிருந்து">Time from Sunrise</div><div class="v" data-en="51 Nazhigai, 30 Vinadigal after previous sunrise" data-ta="முந்தைய சூரிய உதயத்திலிருந்து 51 நாழிகை, 30 விநாடிகள்">51 Nazhigai, 30 Vinadigal after previous sunrise</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============== SECTION 4: DASA ============== -->
 <section id="dasa" class="section">
   <div class="section-head reveal">
     <div class="section-num">
       <span class="num-line"></span>
-      <span>IV · Dasa</span>
+      <span data-en="IV · Dasa" data-ta="IV · தசை">IV · Dasa</span>
       <span class="num-line r"></span>
     </div>
-    <h2 class="section-title" data-en="Dasa Balance" data-ta="தசை சமநிலை">Dasa Balance</h2>
+    <h2 class="section-title" data-en-html="Dasa <span class='accent'>Balance</span>" data-ta-html="தசை <span class='accent'>சமநிலை</span>">
+      Dasa <span class="accent">Balance</span>
+    </h2>
     <div class="section-subtitle" data-en="Planetary Period at Birth" data-ta="பிறப்பின் கிரக காலம்">Planetary Period at Birth</div>
   </div>
-
   <div class="info-card reveal">
-    <svg class="constellation" viewBox="0 0 50 50">
-      <circle cx="25" cy="10" r="1.6"/>
-      <circle cx="15" cy="25" r="1"/>
-      <circle cx="35" cy="25" r="1"/>
-      <circle cx="25" cy="40" r="1.3"/>
-      <line x1="25" y1="10" x2="15" y2="25"/>
-      <line x1="25" y1="10" x2="35" y2="25"/>
-      <line x1="15" y1="25" x2="25" y2="40"/>
-      <line x1="35" y1="25" x2="25" y2="40"/>
-    </svg>
-
+    <div class="number-badge">iii</div>
     <div class="kv reveal-stagger">
-      <div class="kv-row">
-        <div class="k" data-en="Running Dasa" data-ta="நடப்பு தசை">Running Dasa</div>
-        <div class="v"><span class="glow" data-en="Sukra Dasa (Venus)" data-ta="சுக்ரன் தசை (வீனஸ்)">Sukra Dasa (Venus)</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Balance at Birth" data-ta="பிறப்பில் மீதி">Balance at Birth</div>
-        <div class="v"
-             data-en-html='<span class="glow-cyan">4 Years</span> · <span class="glow-cyan">12 Months</span> · <span class="glow-cyan">7 Days</span> · <span class="glow-cyan">19 Ghatis</span>'
-             data-ta-html='<span class="glow-cyan">4 ஆண்டுகள்</span> · <span class="glow-cyan">12 மாதங்கள்</span> · <span class="glow-cyan">7 நாட்கள்</span> · <span class="glow-cyan">19 கடிகை</span>'>
-          <span class="glow-cyan">4 Years</span> · <span class="glow-cyan">12 Months</span> · <span class="glow-cyan">7 Days</span> · <span class="glow-cyan">19 Ghatis</span>
-        </div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Format" data-ta="வடிவம்">Format</div>
-        <div class="v">4 — 12 — 7 — 19</div>
-      </div>
+      <div class="kv-row"><div class="k" data-en="Running Dasa" data-ta="நடப்பு தசை">Running Dasa</div><div class="v"><span class="glow-rose" data-en="Sukra Dasa (Venus)" data-ta="சுக்ரன் தசை (வீனஸ்)">Sukra Dasa (Venus)</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Balance at Birth" data-ta="பிறப்பில் மீதி">Balance at Birth</div><div class="v" data-en-html="<span class='glow'>4 Years</span> · <span class='glow'>12 Months</span> · <span class='glow'>7 Days</span> · <span class='glow'>19 Ghatis</span>" data-ta-html="<span class='glow'>4 ஆண்டுகள்</span> · <span class='glow'>12 மாதங்கள்</span> · <span class='glow'>7 நாட்கள்</span> · <span class='glow'>19 கடிகை</span>"><span class="glow">4 Years</span> · <span class="glow">12 Months</span> · <span class="glow">7 Days</span> · <span class="glow">19 Ghatis</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Format" data-ta="வடிவம்">Format</div><div class="v">4 — 12 — 7 — 19</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============== SECTION 5: ERA ============== -->
 <section id="era" class="section">
   <div class="section-head reveal">
     <div class="section-num">
       <span class="num-line"></span>
-      <span>V · Eras</span>
+      <span data-en="V · Eras" data-ta="V · காலக்கணக்கு">V · Eras</span>
       <span class="num-line r"></span>
     </div>
-    <h2 class="section-title" data-en="Traditional Era Years" data-ta="பாரம்பரிய காலக்கணக்கு">Traditional Era Years</h2>
+    <h2 class="section-title" data-en-html="Traditional <span class='accent'>Era Years</span>" data-ta-html="பாரம்பரிய <span class='accent'>காலக்கணக்கு</span>">
+      Traditional <span class="accent">Era Years</span>
+    </h2>
     <div class="section-subtitle" data-en="for the Year 2000" data-ta="2000-ம் ஆண்டுக்காக">for the Year 2000</div>
   </div>
-
   <div class="info-card reveal">
-    <svg class="constellation" viewBox="0 0 50 50">
-      <circle cx="10" cy="10" r="1"/>
-      <circle cx="40" cy="15" r="1.3"/>
-      <circle cx="20" cy="25" r="1"/>
-      <circle cx="35" cy="35" r="1.2"/>
-      <circle cx="12" cy="42" r="1"/>
-      <line x1="10" y1="10" x2="40" y2="15"/>
-      <line x1="40" y1="15" x2="20" y2="25"/>
-      <line x1="20" y1="25" x2="35" y2="35"/>
-      <line x1="35" y1="35" x2="12" y2="42"/>
-    </svg>
-
+    <div class="number-badge">iv</div>
     <div class="kv reveal-stagger">
-      <div class="kv-row">
-        <div class="k" data-en="Salivahana Saka" data-ta="சாலிவாகன சகாப்தம்">Salivahana Saka</div>
-        <div class="v"><span class="glow">1921</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Kaliyugadhi" data-ta="கலியுகாதி">Kaliyugadhi</div>
-        <div class="v"><span class="glow">5100</span></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Fasli" data-ta="பஸலி">Fasli</div>
-        <div class="v">1409</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Kollam" data-ta="கொல்லம்">Kollam</div>
-        <div class="v">1175</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Hijri" data-ta="ஹிஜ்ரி">Hijri</div>
-        <div class="v">1420 — 21</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="English Year" data-ta="ஆங்கில ஆண்டு">English Year</div>
-        <div class="v">19 — 3 — 2000</div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Ayanam" data-ta="அயனம்">Ayanam</div>
-        <div class="v" data-en-html='Uttarayana <em>(Sun&apos;s northern journey)</em>' data-ta-html='உத்தராயணம் <em>(சூரியனின் வடக்கு பயணம்)</em>'>Uttarayana <em>(Sun&apos;s northern journey)</em></div>
-      </div>
-      <div class="kv-row">
-        <div class="k" data-en="Ritu" data-ta="ருது">Ritu</div>
-        <div class="v" data-en-html='Sisira Ritu <em>(Late Winter)</em>' data-ta-html='சிசிர ருது <em>(பிற்பகுதி குளிர்காலம்)</em>'>Sisira Ritu <em>(Late Winter)</em></div>
-      </div>
+      <div class="kv-row"><div class="k" data-en="Salivahana Saka" data-ta="சாலிவாகன சகாப்தம்">Salivahana Saka</div><div class="v"><span class="glow">1921</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Kaliyugadhi" data-ta="கலியுகாதி">Kaliyugadhi</div><div class="v"><span class="glow">5100</span></div></div>
+      <div class="kv-row"><div class="k" data-en="Fasli" data-ta="பஸலி">Fasli</div><div class="v">1409</div></div>
+      <div class="kv-row"><div class="k" data-en="Kollam" data-ta="கொல்லம்">Kollam</div><div class="v">1175</div></div>
+      <div class="kv-row"><div class="k" data-en="Hijri" data-ta="ஹிஜ்ரி">Hijri</div><div class="v">1420 — 21</div></div>
+      <div class="kv-row"><div class="k" data-en="English Year" data-ta="ஆங்கில ஆண்டு">English Year</div><div class="v">19 — 3 — 2000</div></div>
+      <div class="kv-row"><div class="k" data-en="Ayanam" data-ta="அயனம்">Ayanam</div><div class="v" data-en-html="Uttarayana <em>(Sun's northern journey)</em>" data-ta-html="உத்தராயணம் <em>(சூரியனின் வடக்கு பயணம்)</em>">Uttarayana <em>(Sun's northern journey)</em></div></div>
+      <div class="kv-row"><div class="k" data-en="Ritu" data-ta="ருது">Ritu</div><div class="v" data-en-html="Sisira Ritu <em>(Late Winter)</em>" data-ta-html="சிசிர ருது <em>(பிற்பகுதி குளிர்காலம்)</em>">Sisira Ritu <em>(Late Winter)</em></div></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ============== FOOTER ============== -->
 <footer>
   <div class="footer-blessing">|| சுபம் ||</div>
-
   <div class="footer-divider">
     <span class="line"></span>
     <span class="star">✦</span>
     <span class="line"></span>
   </div>
-
-  <p class="footer-quote"
-     data-en="May this birth chart bring long life, good health, prosperity, and wisdom."
-     data-ta="இந்த ஜாதகம் நீண்ட ஆயுள், நல்ல ஆரோக்கியம், செழிப்பு, ஞானம் வழங்கட்டும்.">
+  <p class="footer-quote" data-en="May this birth chart bring long life, good health, prosperity, and wisdom." data-ta="இந்த ஜாதகம் நீண்ட ஆயுள், நல்ல ஆரோக்கியம், செழிப்பு, ஞானம் வழங்கட்டும்.">
     May this birth chart bring long life, good health, prosperity, and wisdom.
   </p>
-
   <div class="footer-links">
-    <a href="LINKEDIN_URL" id="linkedin-link" target="_blank" rel="noopener" class="footer-link">
+    <a href="https://linkedin.com/in/jothiesh" id="linkedin-link" target="_blank" rel="noopener" class="footer-link">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
       <span>LinkedIn</span>
     </a>
-    <a href="WEBSITE_URL" id="website-link" target="_blank" rel="noopener" class="footer-link">
+    <a href="https://jothiesh.click" id="website-link" target="_blank" rel="noopener" class="footer-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       <span data-en="Website" data-ta="இணையதளம்">Website</span>
     </a>
-    <a href="RESUME_URL" id="resume-link" target="_blank" rel="noopener" class="footer-link">
+    <a href="#" id="resume-link" target="_blank" rel="noopener" class="footer-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
       <span data-en="Résumé" data-ta="ரெஸ்யூமே">Résumé</span>
     </a>
   </div>
-
-  <div class="footer-credit"
-       data-en="© Jothishwaran · 2026"
-       data-ta="© ஜோதிஸ்வரன் · 2026">
-    © Jothishwaran · 2026
-  </div>
+  <div class="footer-credit" data-en="© Jothishwaran · 2026" data-ta="© ஜோதிஸ்வரன் · 2026">© Jothishwaran · 2026</div>
 </footer>
 
 <script>
-/* ============================================================
-   CONFIG — Edit these three URLs
-   ============================================================ */
-const LINKEDIN_URL = "https://linkedin.com/in/jothiesh";
-const WEBSITE_URL  = "https://jothiesh.click";
-const RESUME_URL   = "https://your-resume-link.com/resume.pdf";
-/* ============================================================ */
+(function(){
+  const html=document.documentElement;
+  const btnEn=document.getElementById("btn-en");
+  const btnTa=document.getElementById("btn-ta");
 
-(function() {
-  // Inject links
-  document.getElementById("linkedin-link").href = LINKEDIN_URL;
-  document.getElementById("website-link").href = WEBSITE_URL;
-  document.getElementById("resume-link").href = RESUME_URL;
-
-  // ===== Language toggle =====
-  const html = document.documentElement;
-  const btnEn = document.getElementById("btn-en");
-  const btnTa = document.getElementById("btn-ta");
-
-  function setLang(lang) {
-    html.setAttribute("data-lang", lang);
-    btnEn.classList.toggle("active", lang === "en");
-    btnTa.classList.toggle("active", lang === "ta");
-    try { localStorage.setItem("jathagam-lang", lang); } catch(e){}
-
-    document.querySelectorAll("[data-en]").forEach(el => {
-      const k = "data-" + lang;
-      if (el.hasAttribute(k)) el.textContent = el.getAttribute(k);
+  function setLang(lang){
+    html.setAttribute("data-lang",lang);
+    btnEn.classList.toggle("active",lang==="en");
+    btnTa.classList.toggle("active",lang==="ta");
+    try{localStorage.setItem("jathagam-lang",lang)}catch(e){}
+    document.querySelectorAll("[data-en]").forEach(el=>{
+      const k="data-"+lang;
+      if(el.hasAttribute(k))el.textContent=el.getAttribute(k);
     });
-    document.querySelectorAll("[data-en-html]").forEach(el => {
-      const k = "data-" + lang + "-html";
-      if (el.hasAttribute(k)) el.innerHTML = el.getAttribute(k);
+    document.querySelectorAll("[data-en-html]").forEach(el=>{
+      const k="data-"+lang+"-html";
+      if(el.hasAttribute(k))el.innerHTML=el.getAttribute(k);
     });
-    document.documentElement.lang = lang === "ta" ? "ta" : "en";
+    document.documentElement.lang=lang==="ta"?"ta":"en";
   }
+  btnEn.addEventListener("click",()=>setLang("en"));
+  btnTa.addEventListener("click",()=>setLang("ta"));
 
-  btnEn.addEventListener("click", () => setLang("en"));
-  btnTa.addEventListener("click", () => setLang("ta"));
-
-  let saved = "en";
-  try { saved = localStorage.getItem("jathagam-lang") || "en"; } catch(e){}
+  let saved="en";
+  try{saved=localStorage.getItem("jathagam-lang")||"en"}catch(e){}
   setLang(saved);
 
-  // ===== Nav scroll =====
-  const nav = document.getElementById("nav");
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        nav.classList.toggle("scrolled", window.scrollY > 30);
-        ticking = false;
+  const nav=document.getElementById("nav");
+  let ticking=false;
+  window.addEventListener("scroll",()=>{
+    if(!ticking){
+      requestAnimationFrame(()=>{
+        nav.classList.toggle("scrolled",window.scrollY>30);
+        ticking=false;
       });
-      ticking = true;
+      ticking=true;
     }
-  }, { passive: true });
+  },{passive:true});
 
-  // ===== Smooth anchor scroll =====
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener("click", e => {
-      const id = a.getAttribute("href");
-      if (id.length > 1) {
-        const t = document.querySelector(id);
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" }); }
-      }
+  document.querySelectorAll("a[href^='#']").forEach(a=>{
+    a.addEventListener("click",e=>{
+      const id=a.getAttribute("href");
+      if(id.length>1){const t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"});}}
     });
   });
 
-  // ===== Intersection observer for reveals =====
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in");
-        observer.unobserve(entry.target);
-      }
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add("in");observer.unobserve(entry.target);}
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
-
-  document.querySelectorAll(".reveal, .reveal-stagger").forEach(el => observer.observe(el));
-
-  // ===== Parallax nebulae following mouse (subtle, desktop only) =====
-  const nebulae = document.querySelectorAll(".nebula-1, .nebula-2, .nebula-3");
-  if (nebulae.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.innerWidth > 800) {
-    let mx = 0, my = 0;
-    const offsets = [0, 0, 0, 0, 0, 0]; // x1, y1, x2, y2, x3, y3
-
-    document.addEventListener("mousemove", e => {
-      mx = (e.clientX / window.innerWidth - 0.5) * 30;
-      my = (e.clientY / window.innerHeight - 0.5) * 30;
-    });
-
-    function loop() {
-      offsets[0] += (mx - offsets[0]) * 0.04;
-      offsets[1] += (my - offsets[1]) * 0.04;
-      offsets[2] += (-mx * 0.7 - offsets[2]) * 0.04;
-      offsets[3] += (-my * 0.7 - offsets[3]) * 0.04;
-      offsets[4] += (mx * 0.4 - offsets[4]) * 0.04;
-      offsets[5] += (my * 0.4 - offsets[5]) * 0.04;
-
-      nebulae[0].style.transform = `translate(${offsets[0]}px, ${offsets[1]}px)`;
-      nebulae[1].style.transform = `translate(${offsets[2]}px, ${offsets[3]}px)`;
-      nebulae[2].style.transform = `translate(calc(-50% + ${offsets[4]}px), calc(-50% + ${offsets[5]}px))`;
-      requestAnimationFrame(loop);
-    }
-    loop();
-  }
+  },{threshold:0.12,rootMargin:"0px 0px -60px 0px"});
+  document.querySelectorAll(".reveal,.reveal-stagger").forEach(el=>observer.observe(el));
 })();
 </script>
-
 </body>
 </html>
